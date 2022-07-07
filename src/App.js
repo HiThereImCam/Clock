@@ -1,10 +1,16 @@
 import "./styles.css";
+import moment from "moment";
+import { useEffect, useState } from "react";
 
 export default function App() {
-  return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
-  );
+  const [currentTime, setCurrentTime] = useState("");
+
+  useEffect(() => {
+    let interval = setInterval(() => {
+      setCurrentTime(moment().format("LTS"));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [currentTime]);
+
+  return <div className="App">{currentTime}</div>;
 }
