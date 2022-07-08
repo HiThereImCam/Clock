@@ -7,8 +7,10 @@
 
 .clock-container {
   border: 1px solid red;
-  height: 200px;
-  width: 200px;
+  height: 20em;
+  width: 20em;
+  background-size: 88%;
   border-radius: 50%;
   margin-top: 5%;
+  background: url(ios_clock.svg);
 }
