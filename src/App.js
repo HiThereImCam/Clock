@@ -12,5 +12,10 @@ export default function App() {
     return () => clearInterval(interval);
   }, [currentTime]);
 
-  return <div className="App">{currentTime}</div>;
+  return (
+    <div className="App">
+      {currentTime}
+      <div className="clock-container">{currentTime}</div>
+    </div>
+  );
 }
