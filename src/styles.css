@@ -6,11 +6,107 @@
 }
 
 .clock-container {
-  border: 1px solid red;
   height: 20em;
   width: 20em;
-  background-size: 88%;
   border-radius: 50%;
   margin-top: 5%;
-  background: url(ios_clock.svg);
+  position: relative;
+}
+
+/*
+  The hand center needs to be in the center
+
+  In CSS, ::after creates a pseudo-element that is the last child of the selected element. 
+  It is often used to add cosmetic content to an element with the content property.
+  It is inline by default.
+
+  What is a pseudo-element?
+  keyword added to a selector 
+  that lets you style a specific part of the selected element
+
+  What is pushing the center down?
+    - position relative in the clock-container helped
+  
+  What is the relationship between positions relative/absolute?
+    - 
+
+  What is the logical flow?
+    - I have used display flex
+*/
+
+.clock-container::after {
+  background: #000;
+  border-radius: 50%;
+  content: "";
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 5%;
+  width: 5%;
+  position: absolute;
+  z-index: 10;
+}
+
+.clock-container img {
+  z-index: -10000;
+}
+
+.seconds-container,
+.minutes-container,
+.hours-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border: 1px solid black;
+}
+
+.hours {
+  background: #000;
+  height: 20%;
+  left: 48.75%;
+  position: absolute;
+  top: 30%;
+  width: 2.5%;
+  transform-origin: 50% 100%;
+}
+
+.minutes {
+  background: #000;
+  height: 40%;
+  left: 49%;
+  position: absolute;
+  top: 10%;
+  transform-origin: 50% 100%;
+  width: 2%;
+}
+
+.seconds {
+  background: red;
+  height: 45%;
+  left: 49.8%;
+  position: absolute;
+  top: 14%;
+  transform-origin: 50% 80%;
+  width: 0.5%;
+  z-index: 8;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.hours-container {
+  animation: rotate 43200s infinite linear;
+}
+
+.minutes-container {
+  animation: rotate 3600s infinite steps(60);
+}
+
+.seconds-container {
+  animation: rotate 60s infinite steps(60);
 }

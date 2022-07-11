@@ -19,10 +19,10 @@ export default function App() {
       <div className="clock-container">
         <img src={Clock} />
         <div className="hours-container">
-          <div className="hours">hours</div>
+          <div className="hours"></div>
         </div>
         <div className="minutes-container">
-          <div className="minutes">minutes</div>
+          <div className="minutes"></div>
         </div>
         <div className="seconds-container">
           <div className="seconds"></div>
