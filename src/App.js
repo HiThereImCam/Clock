@@ -29,16 +29,6 @@ export default function App() {
     };
   };
 
-  // const secondsHand = (seconds) => {
-  //   console.log("seconds: ", seconds);
-  //   let secondsAngle = seconds * 6;
-  //   console.log("secondsAngle: ", secondsAngle);
-  //   // secondsRef.current.style.webKitTransform = `rotateZ(${secondsAngle}deg)`;
-  //   secondsRef.current.style.transform = `rotateZ(${secondsAngle}deg)`;
-  // };
-  // const secondsDeg = {
-  //   transform: `rotate(${seconds}deg)`
-  // };
   useEffect(() => {
     let interval = setInterval(() => {
       setCurrentTime(moment().format("LTS"));
