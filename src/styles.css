@@ -59,7 +59,6 @@
   right: 0;
   left: 0;
   bottom: 0;
-  border: 1px solid black;
 }
 
 .hours {
@@ -99,7 +98,7 @@
   }
 }
 
-.hours-container {
+/* .hours-container {
   animation: rotate 43200s infinite linear;
 }
 
@@ -109,4 +108,4 @@
 
 .seconds-container {
   animation: rotate 60s infinite steps(60);
-}
+} */
